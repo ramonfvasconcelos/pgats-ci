@@ -7,7 +7,7 @@ test.describe(`user rides`, async () => {
   });
 
   test('user should be able to ride', async ({ page }) => {
-    await page.getByRole('link', { name: 'Choose Roba Swings' }).click();
+await page.getByText('Choose Roba Swings').click();
     await page.getByLabel('Amount of people').selectOption('2');
     await page.getByRole('button', { name: 'Next' }).click();
 
@@ -16,7 +16,7 @@ test.describe(`user rides`, async () => {
 
   test('user above height should not be allowed', async ({ page }) => {
     await page
-      .getByRole('link', { name: 'Choose Robo Coaster Of Doom' })
+      .getByRole('link', { name: 'Choose Roba Coaster Of Doom' })
       .click();
     await page.getByLabel('Amount of people').selectOption('1');
     await page.getByLabel('Height for person').click();
